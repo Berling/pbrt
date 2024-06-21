@@ -16,7 +16,7 @@ jobs:
 
       - name: Build
         id: build
-        uses: Berling/build-rust@v1
+        uses: Berling/rust-build@v1
 
       - name: Report
         id: report
