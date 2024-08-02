@@ -4,6 +4,7 @@ use std::ops::{
 
 use num_traits::{Float, One, Signed};
 
+#[derive(Clone)]
 pub struct Vector3<T> {
     pub x: T,
     pub y: T,
@@ -74,12 +75,10 @@ impl<T: Ord + Copy> Vector3<T> {
             } else {
                 2
             }
+        } else if self.y < self.z {
+            1
         } else {
-            if self.y < self.z {
-                1
-            } else {
-                2
-            }
+            2
         }
     }
 
@@ -90,12 +89,10 @@ impl<T: Ord + Copy> Vector3<T> {
             } else {
                 2
             }
+        } else if self.y > self.z {
+            1
         } else {
-            if self.y > self.z {
-                1
-            } else {
-                2
-            }
+            2
         }
     }
 }
@@ -118,7 +115,7 @@ impl<T: One + Add<Output = T> + Sub<Output = T> + Mul<Output = T> + Copy> Vector
 
 impl<T: Float> Vector3<T> {
     pub fn has_nan(&self) -> bool {
-        return self.x.is_nan() || self.y.is_nan() || self.z.is_nan();
+        self.x.is_nan() || self.y.is_nan() || self.z.is_nan()
     }
 
     pub fn ceil(self) -> Self {
@@ -137,6 +134,8 @@ impl<T: Float> Vector3<T> {
         }
     }
 }
+
+impl<T> Copy for Vector3<T> where T: Copy {}
 
 impl<T> Index<usize> for Vector3<T> {
     type Output = T;
