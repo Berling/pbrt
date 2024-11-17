@@ -1,0 +1,2 @@
+# PBRT
+Rust implementation of the physically based rendering pipeline described in ['Physically Based Rendering: From Theory To Implementation' by Matt Pharr, Wenzel Jakob, and Greg Humphreys, 4th edition](https://www.pbr-book.org/).
