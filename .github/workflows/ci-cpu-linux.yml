@@ -2,7 +2,9 @@ name: CPU Linux Build and Test
 on: [push]
 jobs:
   build:
-    runs-on: rust:latest
+    runs:
+      using: docker
+      image: rust:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
