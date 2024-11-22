@@ -7,7 +7,7 @@ mod tests {
     #[test]
     fn vector3_basics() {
         let v = Vector3f32::new(-1.0, 10.0, 2.0);
-        assert_eq!(v, Vector3f32::from(Vector3i32::new(-1, 10, 2)));
+        assert_eq!(v, Vector3i32::new(-1, 10, 2).into());
         assert_ne!(v, Vector3f32::new(-1.0, 100.0, 2.0));
         assert_eq!(Vector3f32::new(-2.0, 20.0, 4.0), v + v);
         assert_eq!(Vector3f32::new(0.0, 0.0, 0.0), v - v);
