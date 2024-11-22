@@ -1,4 +1,24 @@
+use super::{Normal2, Point2};
+
 impl_tuple2!(Vector2);
+
+impl<T, U> From<Point2<U>> for Vector2<T>
+where
+    Vector2<T>: From<Vector2<U>>,
+{
+    fn from(value: Point2<U>) -> Self {
+        Vector2::<U>::new(value.x, value.y).into()
+    }
+}
+
+impl<T, U> From<Normal2<U>> for Vector2<T>
+where
+    Vector2<T>: From<Vector2<U>>,
+{
+    fn from(value: Normal2<U>) -> Self {
+        Vector2::<U>::new(value.x, value.y).into()
+    }
+}
 
 #[cfg(test)]
 mod tests {

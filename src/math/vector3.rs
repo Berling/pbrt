@@ -1,4 +1,24 @@
+use super::{Normal3, Point3};
+
 impl_tuple3!(Vector3);
+
+impl<T, U> From<Point3<U>> for Vector3<T>
+where
+    Vector3<T>: From<Vector3<U>>,
+{
+    fn from(value: Point3<U>) -> Self {
+        Vector3::<U>::new(value.x, value.y, value.z).into()
+    }
+}
+
+impl<T, U> From<Normal3<U>> for Vector3<T>
+where
+    Vector3<T>: From<Vector3<U>>,
+{
+    fn from(value: Normal3<U>) -> Self {
+        Vector3::<U>::new(value.x, value.y, value.z).into()
+    }
+}
 
 #[cfg(test)]
 mod tests {
