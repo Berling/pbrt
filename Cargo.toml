@@ -3,4 +3,8 @@ name = "pbrt"
 version = "0.1.0"
 edition = "2024"
 
+[[bin]]
+name = "pbrt_bin"
+path = "src/pbrt.rs"
+
 [dependencies]
