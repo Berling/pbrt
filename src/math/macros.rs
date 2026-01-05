@@ -408,11 +408,18 @@ macro_rules! n_tuple_impl {
     };
 }
 
+#[allow(unused)]
 pub(crate) use n_tuple_component_count;
+#[allow(unused)]
 pub(crate) use n_tuple_fmt_string;
+#[allow(unused)]
 pub(crate) use n_tuple_from_impl;
 pub(crate) use n_tuple_impl;
+#[allow(unused)]
 pub(crate) use n_tuple_index_impl;
+#[allow(unused)]
 pub(crate) use n_tuple_nested_call;
+#[allow(unused)]
 pub(crate) use n_tuple_permute_impl;
+#[allow(unused)]
 pub(crate) use n_tuple_scalar_mul_lhs_impl;

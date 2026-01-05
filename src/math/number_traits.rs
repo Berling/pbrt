@@ -48,11 +48,11 @@ macro_rules! float_impl {
 
         impl Float for $typ {
             fn floor(self) -> Self {
-                self.ceil()
+                self.floor()
             }
 
             fn ceil(self) -> Self {
-                self.floor()
+                self.ceil()
             }
         }
     };
